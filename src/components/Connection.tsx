@@ -2461,7 +2461,7 @@ const uploadToBackend = async (filename: string) => {
                                                                     });
                                                                     
                                                                     if (res.ok) {
-                                                                        window.open(`/analysis?subjectId=${selectedSubject.subjectId}&filename=${rec.filename}`, '_blank');
+                                                                        window.location.href = `/analysis?subjectId=${selectedSubject.subjectId}&filename=${rec.filename}`;
                                                                     } else {
                                                                         const data = await res.json();
                                                                         alert("Analysis failed: " + (data.error || "Unknown error"));
